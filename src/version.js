@@ -26,7 +26,7 @@ Si vez a alguien que robo mi bot comunicate conmigo.
 
 *BLOG DE DestroyerBot*
 
-https://github.com/JuandelValle20/DestroyerBot-4.1.0
+https://github.com/JuandelValle20/DestroyerBot-5.1
 
 by JuandelValle
 `
