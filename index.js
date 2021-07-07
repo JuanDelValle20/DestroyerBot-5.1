@@ -1125,7 +1125,11 @@ async function starts() {
 
 		if (budy.includes(`El bot sabe que numero va despues del 12`)) {
 				  reply(`*Baka Hentai*`)
-				  }				  
+				  }		
+				  
+		if (budy.includes(`Cuánto es 12+1`)) {
+				  reply(`*Baka Hentai*`)
+				  }
 			  				  
 				if (isGroup && isSimi && budy != undefined) {
 						console.log(budy)
