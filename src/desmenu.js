@@ -1,17 +1,31 @@
 const desmenu = (prefix, pushname) => {
-    return `
+  return `
 *Comandos De Descargas ✅*
- 
-- ${prefix}play
-  Coloca el nombre de la cancion. O el link del video YT
-- ${prefix}ytmp3
-  Coloca el link del video YT
-- ${prefix}ytmp4
-  Coloca el link del video YT
-    
-_*play tiene un limite de 2000 canciones si llega a su limite se restablecera dentro de 24 horas_
-     
-by JuandelValle`
+
+══════════════
+
+*AUDIO*
+
+${prefix}play2
+Una alternativa por si *play llego a su limite de canciones
+
+${prefix}play
+Coloca el nombre de la cancion, o el link del video YT
+
+
+${prefix}play Industry Baby - Lil Nas X
+
+══════════════
+
+*COMUNICADO*
+
+*ytmp4 y *ytmp3 estan en mantenimiento, muy pronto sacaré una actualizacion de esos comandos más renovados :)
+
+══════════════
+  
+_*play y *play2 tiene un limite de 2000 canciones en el server, si llega a su limite se restablecerá dentro de 24 horas_
+   
+ву Juan del Valle`
 
 }
 
