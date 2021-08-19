@@ -1,6 +1,6 @@
 {
-  "name": "ShanBot",
-  "version": "5.1",
+  "name": "shanbot",
+  "version": "0.0.2",
   "description": "Only termux",
   "main": "index.js",
   "directories": {
