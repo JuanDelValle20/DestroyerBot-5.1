@@ -37,10 +37,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JuanDelValle20/DestroyerBot-5.1"
+    "url": "git+https://github.com/JuanDelValle20/DestroyerBot-5.1.git"
   },
   "bugs": {
-    "url": "https://github.com/JuanDelValle20/DestroyerBot-5.1"
+    "url": "https://github.com/JuanDelValle20/DestroyerBot-5.1.git"
   },
-  "homepage": "https://github.com/JuanDelValle20/DestroyerBot-5.1#readme"
+  "homepage": "https://github.com/JuanDelValle20/DestroyerBot-5.1.git#readme"
 }
