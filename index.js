@@ -446,6 +446,9 @@ async function starts() {
                 case 'welmenu':
 		client.sendMessage(from, welmenu(prefix, sender), text, {quoted: mek})
 		break
+		case 'shantera':
+		client.sendMessage(from, shantera(prefix, sender), text, {quoted: mek})
+		break
 					
 		/*case 'virtex':
 	       case 'troleo':
