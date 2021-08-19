@@ -309,9 +309,12 @@ async function starts() {
 					imgs: 'Oye Destructor(a) 🥴\n\n*Convirtiendo tu Sticker a Imagen 🔄*\n\nby JuandelValle',
 					mpcancion: 'Calmadoooo, estoy procesando 😎\n\n*Convirtiendo de MP4 a MP3 🔄*\n\nby JuandelValle',
 					mpa: 'Oye Destructor(a) 🥴\n\n*Estoy decargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\nby JuandelValle',
-                                        mpv: 'Calmado mortal 😎\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nby JuandelValle',
-					musica: 'Calmado mortal estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube ❗*\n\nby JuandelValle',
-					registroB: `「AVISO」\n\nPERO MORTAAAAL!\n\nNo estas registrado en mi base de datos 😳 \n\nComando : ${prefix}registro Nombre\nEjemplo : ${prefix}registro Destroyer`,
+                                        xn: 'Calmado mortal 😎\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nву Juan del Valle',
+					mpv: 'Calma ✋🤚\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nву Juan del Valle',
+					insta: 'Calmado 😎\n\n*Estoy descargando tu post 🔄*\n\nAguarde un momento, por favor\n\nву Juan del Valle',
+					musica: 'Calmado mortal, estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube*\n\n*Si el comando *play no funciona utiliza el comando *play2*\n\nSi no envío tu música checa que versión tienes del bot con *version\n\nву Juan del Valle',
+					musica2: 'Calmado mortal estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube*\n\n*Si el comando *play2 no funciona utiliza el comando *play*\n\nSi no envío tu música checa que versión tienes del bot con *version\n\nву Juan del Valle',
+					registroB: `「NO ESTAS REGISTRADO」\n\nMORTAL NO APARECES EN MI BASE DE DATOS ✋🤚\n\nPara poder usarme escribe el siguente comando\n\nComando: ${prefix}registro Nombre\nEjemplo: ${prefix}registro Destroyer`,
 				}
 			}
     			const apakah = ['Si','No']
@@ -887,6 +890,19 @@ async function starts() {
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
                 client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
                 break
+				case 'play2':   
+				if (args.length < 1) return reply('Dónde está el nombre de la canción?\n\nEjemplo: *play2 Industry Baby - Lil Nas X')
+			if (!isUser) return reply(mess.only.registroB)
+				reply(mess.only.musica2)
+					play = body.slice(5)
+					anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=shanduy44`)
+					if (anu.error) return reply(anu.error)
+					infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
+					buffer = await getBuffer(anu.result.thumbnail)
+					lagu = await getBuffer(anu.result.url_audio)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
+					client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
+					break
                                 case 'registro':
 					client.updatePresence(from, Presence.composing)
 					if (isUser) return reply('Ya estas registrado Destructor(a) 🤙')
