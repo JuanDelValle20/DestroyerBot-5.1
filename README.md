@@ -8,6 +8,13 @@
 </p>
 
 <p align="center">
+    <img
+        src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white" />
+    <img
+        src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" />
+</p>
+
+<p align="center">
 <a href="https://github.com/shanduy"><img title="Creador" src="https://img.shields.io/badge/Author-Shanduy-purple.svg?style=for-the-badge&logo=github"></a>
 </p>
 
@@ -28,20 +35,7 @@ Mis Redes Sociales Y Mi Whatsapp Para Resolver Tus Problemas
 
 
 # ShanBot
-ULTIMA VERSION 2.6
-
-*Actualizado:* 16 de junio de 2021
-
-*Play:* Actualizado 18 de junio 2021
-
-Actualizacion de la version @adiwajshing/baileys a la mas estable
-
-Nuevo motor WAConnection :)
-
-Nuevo comando *attp
-
-Cambio de apikey y server en *play
-
+ULTIMA VERSION 4.0
 
 Pasos para instalar el bot via termux
 https://www.youtube.com/watch?v=2LQSzEbpJ-M
