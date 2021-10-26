@@ -18,6 +18,7 @@ const search = (prefix, botName, ownerName) => {
   ├─ ❏ ${prefix}ytsearch
   ├─ ❏ ${prefix}trendtwit
   ├─ ❏ ${prefix}wikien
-  ├─ ❏ ${prefix}wiki`
+  ├─ ❏ ${prefix}wiki
+  └─ ❏ ${prefix}neonime`
 }
 exports.search = search
