@@ -1,4 +1,4 @@
 const apikey = {
-        BarBarKey: 'destroyerbot-317502',
-        TobzKey: 'DestroyerBot',
+        BarBarKey: 'YOUR_APIKEY',
+        TobzKey: 'BotWeA',
 }
