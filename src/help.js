@@ -1,31 +1,39 @@
 const help = (prefix) => {
 	return `
 
-⌜ *DestroyerBot 🥵 by JuandelValle* ⌟  
+⌜ _*DestroyerBot ву Juan del Valle*_ ⌟  
 
 ◉ *INFORMACION*
    ○ Comando: ⌜ ${prefix} ⌟
-   ○ Editor: JuandelValle™ 
+   ○ Creador: Juan del Valle 
 
 
-◉ *NUEVO COMANDO*
-- ${prefix}shantera
+◉ *COMUNICADO*
+La función *kick esta en mantenimiento 
+
+◉ *NUEVOS COMANDOS*
+○ ${prefix}banmenu
+Banear a personas el uso del bot
+○ ${prefix}levelmenu
+Level para tus grupos
+○ ${prefix}antimenu
+Su nombre lo dice todo (antilink)
+○ ${prefix}shantera
 Interactua con el bot
 
 ◉ *NUEVOS MENUS*
-- ${prefix}desmenu
-Descargar musica y videos de YT
-- ${prefix}version
+○ ${prefix}juegos
+Diviértete con tus amigos :)
+○ ${prefix}desmenu
+Descargar musica y videos
+○ ${prefix}version
 Conoce la versión de tu bot
-- ${prefix}welmenu
-Comandos de bienvedia a grupos
-
-◉ *PARA USAR EL BOT*
-Registrate con el comando ${prefix}registro y tu nombre
+○ ${prefix}welmenu
+Comando de bienvenida solo grupos
 
 ◉ *RESUELVE TUS DUDAS*
   ║
-  ╠ ○ ${prefix}Editor
+  ╠ ○ ${prefix}creador
   ╚ Dudas o problemas aqui
 
 ◉ *CREAR STICKERS*
@@ -57,29 +65,35 @@ Registrate con el comando ${prefix}registro y tu nombre
 
 ◉ *GRUPOS*
   ║
+  ╠ ○ ${prefix}unir
+  ╠ Unir a una persona al grupo
+  ╠ ○ ${prefix}fgc
+  ╠ Cambiar foto del grupo
+  ╠ ○ ${prefix}ngc
+  ╠ Cambiar nombre del grupo
+  ╠ ○ ${prefix}dgc
+  ╠ Cambiar descripcion del grupo
   ╠ ○ ${prefix}closegc
   ╠ Cerrar el grupo solo admins
   ╠ ○ ${prefix}opengc
   ╠ Abrir grupo solo admins
-  ╠ ○ ${prefix}kick o hakai
-  ╠ Eliminar a un miembro 
   ╠ ○ ${prefix}promote
   ╠ Dar admin a un miembro
   ╠ ○ ${prefix}demote
   ╠ Quitar el admin
   ╠ ○ ${prefix}linkgc
   ╠ Link del grupo
+  ╠ ○ ${prefix}adminlist
+  ╠ Nombra a los admins del grupo
   ╠ ○ ${prefix}todos
   ╚ Nombra a todos los del grupo
 
 Para usar estas funciones el bot necesita admin
-  
 
 
-by JuandelValle
 
-⌜ *Esto es solo el comienzo de una era totalmente nueva UwU* ⌟ 
-⌜ *Shanduy es el creador de la base de este bot, JuandelValle es el que modificó la base para adaptarla a los grupos donde pertenece* ⌟ 
+_*by Juan del Valle*_
+
 `
 }
 
