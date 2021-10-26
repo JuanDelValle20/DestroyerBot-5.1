@@ -14,7 +14,7 @@ const menuadmin = (prefix, pushname) => {
  ├─ ❏ ${prefix}tagall4
  ├─ ❏ ${prefix}tagall5
  ├─ ❏ ${prefix}add
- ├─ ❏ ${prefix}kick
+ ├─ ❏ ${prefix}hakai
  ├─ ❏ ${prefix}listadmins
  ├─ ❏ ${prefix}linkgroup
  ├─ ❏ ${prefix}leave
@@ -22,7 +22,6 @@ const menuadmin = (prefix, pushname) => {
  ├─ ❏ ${prefix}leveling
  ├─ ❏ ${prefix}level
  ├─ ❏ ${prefix}delete
- ├─ ❏ ${prefix}simih
  └─ ❏ ${prefix}ownergroup
  `
 
