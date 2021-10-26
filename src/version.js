@@ -1,34 +1,18 @@
 const version = (prefix, pushname) => {
     return `
-*DestroyerBot 🥵*
+    *DestroyerBot ву Juan del Valle*
 
-*Actualizado:* 19 de junio de 2021
-*Versión actual:* 4.1.0
-*Ofrecida por:* JuandelValle™
-
-
-*NOVEDADES*
-
-Bot interactivo
-
-Actualizacion de la version @adiwajshing/baileys a la mas estable
-
-Nuevo motor WAConnection :)
+    *Actualizado:* 01 de Noviembre del 2021
+    *Versión actual:* 10.0
+    *Ofrecida por:* Juan del Valle™
 
 
-*INFORME*
+*COMUNICADO*
 
-Si no funciona el comando *play checa el blog del bot y mira la version que poses. 
-Ya que ire cambiando mi apikey de mi bot para que siga en funcionamiento.
-Cambiare la apikey pasando un mes o si veo muchos atercados o robos.
-Si vez a alguien que robo mi bot comunicate conmigo.
+La funcion *kick sigue en mantenimiento
 
 
-*BLOG DE DestroyerBot*
-
-https://github.com/JuandelValle20/DestroyerBot-5.1
-
-by JuandelValle
+_*by Juan del Valle*_
 `
 
 }
