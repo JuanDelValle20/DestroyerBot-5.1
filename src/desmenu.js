@@ -1,31 +1,42 @@
 const desmenu = (prefix, pushname) => {
-  return `
+    return `
 *Comandos De Descargas ✅*
-
+ 
 ══════════════
 
 *AUDIO*
 
+${prefix}play
+Coloca el nombre de la cancion o el link del video YT
+
 ${prefix}play2
 Una alternativa por si *play llego a su limite de canciones
 
-${prefix}play
-Coloca el nombre de la cancion, o el link del video YT
 
-
+Ejemplo:
 ${prefix}play Industry Baby - Lil Nas X
 
+O
+
+Ejemplo:
+${prefix}play www.youtube.com/xxxxxxxx
+
 ══════════════
 
-*COMUNICADO*
+*VIDEO*
 
-*ytmp4 y *ytmp3 estan en mantenimiento, muy pronto sacaré una actualizacion de esos comandos más renovados :)
+${prefix}ytmp4
+Descarga videos de YouTube
+
+Ejemplo:
+${prefix}ytmp4 www.youtube.com/xxxxxxxx
 
 ══════════════
-  
-_*play y *play2 tiene un limite de 2000 canciones en el server, si llega a su limite se restablecerá dentro de 24 horas_
-   
-ву Juan del Valle`
+    
+_*play y *play2 tiene un limite de 2000 canciones en el server, si llega a su limite se restablecera dentro de 24 horas_
+     
+_*by Juan del Valle*_
+`
 
 }
 
