@@ -8,9 +8,6 @@ const help = (prefix) => {
    ○ Creador: Juan del Valle 
 
 
-◉ *COMUNICADO*
-La función *kick esta en mantenimiento 
-
 ◉ *NUEVOS COMANDOS*
 ○ ${prefix}banmenu
 Banear a personas el uso del bot
