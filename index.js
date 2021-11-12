@@ -1837,14 +1837,6 @@ break
 						reply(`Buena noche 🐷 fly *UwU*`)
 						}		
 	  
-			  if (budy.includes(` Fly `)) {
-						reply(`🐷 Fly* *UwU*`)
-						}
-	  
-			  if (budy.includes(`  fly  `)) {
-						reply(`🐷 Fly* *UwU*`)
-						}
-	  
 			  if (budy.includes(`El bot sabe qué número va después del 12`)) {
 						reply(`*Baka Hentai*`)
 						}
