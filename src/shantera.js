@@ -18,7 +18,6 @@ const shantera = (prefix, pushname) => {
 - Ya están los nidos
 - Nidos de Arceus
 - Buenas noches
-- Fly 
 - El bot sabe qué número va después del 12 
 - Cuánto es 12+1
 - Oye bot, tú y yo qué somos
