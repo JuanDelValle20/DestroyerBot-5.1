@@ -4,7 +4,7 @@
 * shanduy se reserva todos los derechos de autor
 * © 2021 shanduy, INC.
 
-Cualquier copia que utilize mi ApiKey sera dado de baja
+Cualquier copia que utilice mi ApiKey sera dado de baja
 
 - Que hay de nuevo?
 * Nada
@@ -68,7 +68,6 @@ const { juegos } = require('./src/juegos')
 const { shantera } = require('./src/shantera')
 const { antimenu } = require('./src/antimenu')
 const { welmenu } = require('./src/welmenu')
-const { kickmenu } = require('./src/kickmenu')
 const { banmenu } = require('./src/banmenu')
 const { otak } = require('./src/otak')
 const { levelmenu } = require('./src/levelmenu')
@@ -83,7 +82,7 @@ const vcard = 'BEGIN:VCARD\n' // Tarjeta de contacto
             + 'END:VCARD'
 /******FIN DE ENTRADA VCARD******/
 
-prefix = '*'
+prefix = '!'
 blocked = []
 banChats = false
 
@@ -234,7 +233,7 @@ function kyun(seconds){
 
 async function starts() {
 	const client = new WAConnection()
-	client.version = [2,2143,3]
+	client.version = [2, 2142, 12]
         client.logger.level = 'warn'
 	console.log(banner.string)
 	client.on('qr', () => {
@@ -579,46 +578,46 @@ if (budy.includes("https://m.facebook.com/")){
         if (isCmd && isGroup) console.log('\x1b[1;37m>', '[ \x1b[1;36mMensaje\x1b[1;37m ]', time, color(command), 'De', color(sender.split('@')[0]), 'En', color(groupName))
 
 /******ENTRADA FIN DE FUNCIONES******/
-			function addMetadata(packname, author) {	
-				if (!packname) packname = 'DestroyerBot'; if (!author) author = 'Juan del Valle';	
-				author = author.replace(/[^a-zA-Z0-9]/g, '');	
-				let name = `${author}_${packname}`
-				if (fs.existsSync(`./src/stickers/${name}.exif`)) return `./src/stickers/${name}.exif`
-				const json = {	
-					"sticker-pack-name": packname,
-					"sticker-pack-publisher": author,
-				}
-				const littleEndian = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00])	
-				const bytes = [0x00, 0x00, 0x16, 0x00, 0x00, 0x00]	
+function addMetadata(packname, author) {	
+	if (!packname) packname = 'DestroyerBot'; if (!author) author = 'Juan Del Valle';	
+	author = author.replace(/[^a-zA-Z0-9]/g, '');	
+	let name = `${author}_${packname}`
+	if (fs.existsSync(`./src/stickers/${name}.exif`)) return `./src/stickers/${name}.exif`
+	const json = {	
+		"sticker-pack-name": packname,
+		"sticker-pack-publisher": author,
+	}
+	const littleEndian = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00])	
+	const bytes = [0x00, 0x00, 0x16, 0x00, 0x00, 0x00]	
 
-				let len = JSON.stringify(json).length	
-				let last	
+	let len = JSON.stringify(json).length	
+	let last	
 
-				if (len > 256) {	
-					len = len - 256	
-					bytes.unshift(0x01)	
-				} else {	
-					bytes.unshift(0x00)	
-				}	
+	if (len > 256) {	
+		len = len - 256	
+		bytes.unshift(0x01)	
+	} else {	
+		bytes.unshift(0x00)	
+	}	
 
-				if (len < 16) {	
-					last = len.toString(16)	
-					last = "0" + len	
-				} else {	
-					last = len.toString(16)	
-				}	
+	if (len < 16) {	
+		last = len.toString(16)	
+		last = "0" + len	
+	} else {	
+		last = len.toString(16)	
+	}	
 
-				const buf2 = Buffer.from(last, "hex")	
-				const buf3 = Buffer.from(bytes)	
-				const buf4 = Buffer.from(JSON.stringify(json))	
+	const buf2 = Buffer.from(last, "hex")	
+	const buf3 = Buffer.from(bytes)	
+	const buf4 = Buffer.from(JSON.stringify(json))	
 
-				const buffer = Buffer.concat([littleEndian, buf2, buf3, buf4])	
+	const buffer = Buffer.concat([littleEndian, buf2, buf3, buf4])	
 
-				fs.writeFile(`./src/stickers/${name}.exif`, buffer, (err) => {	
-					return `./src/stickers/${name}.exif`	
-				})	
+	fs.writeFile(`./src/stickers/${name}.exif`, buffer, (err) => {	
+		return `./src/stickers/${name}.exif`	
+	})	
 
-			}
+}
 			switch(command) {
 		case 'help':
 		case 'menu':
@@ -728,7 +727,7 @@ rate = body.slice(9)
 client.updatePresence(from, Presence.composing) 
 random = `${Math.floor(Math.random() * 100)}`
 fan = random
-if (fan < 20 ) {cu = 'Te mereces el cielo 👏'} else if (fan == 21 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 23 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 24 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 25 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 26 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 27 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 28 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 29 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 30 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 31 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 32 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 33 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 34 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 35 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 36 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 37 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 38 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 39 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 40 ) {cu = 'Ramirez que hace viendo pidgey 🤔'} else if (fan == 41 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 42 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 43 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 44 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 45 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 46 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 47 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 48 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 49 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 50 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan > 51) {cu = 'Señores un autentico SEGUIDOR DEL TODOPODEROSO BIDOOF está en el grupo 🥸'}
+if (fan < 20 ) {cu = ':v?'} else if (fan == 21 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 23 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 24 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 25 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 26 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 27 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 28 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 29 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 30 ) {cu = 'Te salvaste rattata 😎'} else if (fan == 31 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 32 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 33 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 34 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 35 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 36 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 37 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 38 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 39 ) {cu = 'Caterpie que hace viendo videos de cómo ser un seguidor del TODOPODEROSO BIDOOF? 🤔'} else if (fan == 40 ) {cu = 'Ramirez que hace viendo pidgey 🤔'} else if (fan == 41 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 42 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 43 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 44 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 45 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 46 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 47 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 48 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 49 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan == 50 ) {cu = 'Mmm sospechoso pidgey 🧐'} else if (fan > 51) {cu = 'Señores un autentico SEGUIDOR DEL TODOPODEROSO BIDOOF está en el grupo 🥸'}
 hasil = `${rate}Resultado ${random}% fan del TODOPODEROSO BIDOOF\n\n${cu}`
 reply(hasil)
 break
@@ -749,8 +748,7 @@ mentions(teks, d, true)
 console.log(e)
 reply('Hubo un error intentalo nuevamente :/')
 }
-break				
-				
+break					
 								
 /******JUEGOS SHANDUY NO TE OLVIDES******/						
 					
@@ -771,7 +769,7 @@ break
 	
 				case 'creador':
 					client.sendMessage(from, {displayname: "Juan ", vcard: vcard}, MessageType.contact, { quoted: mek})
-				 client.sendMessage(from, 'Arriba está el número del creador del bot <DestroyerBot ву Juan del Valle>\n\nNO SOY UN BOT \n\nAhi puedes resolver tus preguntas y errores :)\n\nEste no es el numero del propietario del bot que estas usando ahora mismo. Si no, del creador de la base de datos del bot o sea Juan\n\nву Juan del Valle',MessageType.text, { quoted: mek} )
+				 client.sendMessage(from, 'Arriba está el número del creador del bot <DestroyerBot ву Juan del Valle>\n\nNO SOY UN BOT \n\nAhi puedes resolver tus preguntas y errores :)\n\nEste no es el número del propietario del bot que estas usando ahora mismo. Si no, del creador de la base de datos del bot o sea Juan\n\nву Juan del Valle',MessageType.text, { quoted: mek} )
 						 const none = fs.readFileSync('0');
 				 client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 						 break
@@ -880,7 +878,7 @@ break
 						reply('')
 					} else {
 						for (let _ of anu) {
-							sendMess(_.jid, `*「 _*by Juan del Valle*_ 」*\n\n${body.slice(4)}`)
+							sendMess(_.jid, `*「 _by Juan del Valle_ 」*\n\n${body.slice(4)}`)
 						}
 						reply('Transmisión exitosa')
 					}
@@ -1087,25 +1085,27 @@ break
                                       
 									case 'kick':
 					case 'hakai':
-					client.updatePresence(from, Presence.composing) 
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Etiqueta al usuario que vamos a *DESTRUIR*')
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) {
-						teks = '_Antes de la creación, viene la destrucción_ ... *HAKAI* :\n'
-						for (let _ of mentioned) {
-							teks += `@${_.split('@')[0]}\n`
+						if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+						if (!isGroupAdmins) return reply(mess.only.admin)
+						if (!isGroup) return reply(mess.only.group)
+						if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) return reply('Etiqueta al usuario que vamos a *"DESTRUIR"*')
+						if (mek.message.extendedTextMessage.contextInfo.participant === undefined) {
+						entah = mek.message.extendedTextMessage.contextInfo.mentionedJid
+						if (entah.length > 1) {
+						var mems_ids = []
+						for (let ids of entah) {
+						mems_ids.push(ids)
 						}
-						mentions(teks, mentioned, true)
-						client.groupRemove(from, mentioned)
-					} else {
-						mentions(`_Antes de la creación, viene la destrucción_ ... *HAKAI* 🖐 : @${mentioned[0].split('@')[0]}`, mentioned, true)
-						client.groupRemove(from, mentioned)
-					client.sendMessage(mentioned, 'Le faltaba odio', text)
-					}
+						client.groupRemove(from, mems_ids)
+						} else {
+						client.groupRemove(from, [entah[0]])
+						}
+						} else {
+						entah = ridwan.message.extendedTextMessage.contextInfo.participant
+						client.groupRemove(from, [entah])
+						}
 	break
+
 case 'demote':
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
@@ -1253,81 +1253,75 @@ break
 //CREACION DE STICKERS Y VARIOS				
 				
 				case 's':
-				case 'tucson':
-				case 'opa':
-				case 'shan':
-				case 'nefasto':
-				case 'stiker':
+            	case 'stiker':
 				case 'sticker':
 				case 'stickergif':
 				case 'stikergif':
-					if (!isUser) return reply(mess.only.registroB)
-				if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await client.downloadAndSaveMediaMessage(encmedia)							
-						ran = getRandom('.webp')
-						await ffmpeg(`./${media}`)		
-							.input(media)
-							.on('start', function (cmd) {
-								console.log(`Started : ${cmd}`)
-							})
-							.on('error', function (err) {
-								console.log(`Error : ${err}`)
-								fs.unlinkSync(media)								
-								reply(mess.error.stick)
-							})
-							.on('end', function () {
-								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata(pack, author)} ${ran} -o ${ran}`, async (error) => {
-									 if (error) {
-											 reply(ind.stikga())
-											 fs.unlinkSync(media)	
-											 fs.unlinkSync(ran)
-											 }
-									client.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
-									fs.unlinkSync(media)	
-									fs.unlinkSync(ran)	
-								})
-							})
-							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-							.toFormat('webp')
-							.save(ran)
-					} else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
-						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await client.downloadAndSaveMediaMessage(encmedia)
-						ran = getRandom('.webp')
-						reply(mess.only.pegatina)
-						await ffmpeg(`./${media}`)
-							.inputFormat(media.split('.')[1])
-							.on('start', function (cmd) {
-								console.log(`Started : ${cmd}`)
-							})
-							.on('error', function (err) {
-								console.log(`Error : ${err}`)
-								fs.unlinkSync(media)
-								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`[❗] Falló, al momento de convertir ${tipe} al sticker`)
-							})
-							.on('end', function () {
-								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata(pack, author)} ${ran} -o ${ran}`, async (error) => {
-									if (error) {
-											 reply(ind.stikga())
-											 fs.unlinkSync(media)	
-											 fs.unlinkSync(ran)
-											 }
-									client.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
-									fs.unlinkSync(media)
-									fs.unlinkSync(ran)
-								})
-							})
-							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-							.toFormat('webp')
-							.save(ran)
-					} else {
-						reply(`Envíe una imagen con el comando ${prefix}s o etiqueta a una imagen que ya se haya enviado`)
-					}
-					break		
+					if (!isUser) return reply(mess.only.daftarB)
+					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
+			 const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+			 const media = await client.downloadAndSaveMediaMessage(encmedia)
+									 ran = getRandom('.webp')
+			 await ffmpeg(`./${media}`)
+				 .input(media)
+				 .on('start', function (cmd) {
+					 console.log(`Started : ${cmd}`)
+				 })
+				 .on('error', function (err) {
+					 console.log(`Error : ${err}`)
+					 fs.unlinkSync(media)
+					 reply(mess.error.stick)
+				 })
+				 .on('end', function () {
+					 console.log('Finish')
+					 exec(`webpmux -set exif ${addMetadata(pack, author)} ${ran} -o ${ran}`, async (error) => {
+						  if (error) {    
+									  fs.unlinkSync(media)	
+								  fs.unlinkSync(ran)
+								  }
+						 client.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
+						 fs.unlinkSync(media)	
+						 fs.unlinkSync(ran)	
+					 })
+				 })
+				 .addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+				 .toFormat('webp')
+				 .save(ran)
+			 } else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
+			 const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+			 const media = await client.downloadAndSaveMediaMessage(encmedia)
+			 ran = getRandom('.webp')
+			 reply(mess.only.pegatina)
+			 await ffmpeg(`./${media}`)
+				 .inputFormat(media.split('.')[1])
+				 .on('start', function (cmd) {
+					 console.log(`Started : ${cmd}`)
+				 })
+				 .on('error', function (err) {
+					 console.log(`Error : ${err}`)
+					 fs.unlinkSync(media)
+					 tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+					 reply(`[❗] Fallo, al momento de convertir la imagen a sticker`)
+				 })
+				 .on('end', function () {
+					 console.log('Finish')
+						 exec(`webpmux -set exif ${addMetadata(pack, author)} ${ran} -o ${ran}`, async (error) => {
+						 if (error) {
+								  fs.unlinkSync(media)	
+								  fs.unlinkSync(ran)
+								  }
+					 buff = fs.readFileSync(ran)
+					 client.sendMessage(from, buff, sticker)
+					 fs.unlinkSync(media)
+					 fs.unlinkSync(ran)
+				 })
+			 })
+				 .addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+				 .toFormat('webp')
+				 .save(ran)
+			 }
+			 break	
+
 					case 'attp':
 						if (!isUser) return reply(mess.only.registroB)
 					        if (args.length < 1) return reply(`¿Dónde está el texto?\n*Ejemplo:* ${prefix}attp DestroyerBot`)
@@ -1438,72 +1432,55 @@ break
                                 
 //FIN DE REGISTRO  
 				
-break
-case 'eryweydrjdgh srfj wsrj s':
-try{
-if (!isNsfw) return reply('❌ *NSFW NO ESTA ACTIVADO* ❌')
-				 if (!isUser) return reply(mess.only.registroB)
-res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwneko?apikey=BotWeA`, {method: 'get'})
-buffer = await getBuffer(res.result)
-client.sendMessage(from, buffer, image, {quoted: mek, caption: 'mesum'})
-} catch (e) {
-console.log(`Error :`, color(e,'red'))
-reply('❌ *ERROR* ❌')
-}
-break
-   case 'wsrd hwrtu wrt uwruj wruj ':
-if (!isGroup) return reply(mess.only.group)
-if (!isGroupAdmins) return reply(mess.only.admin)
-if (args.length < 1) return reply('Digita 1 para activar los NSFW')
-if (Number(args[0]) === 1) {
-if (isNsfw) return reply('Recursos Activados ✅')
-nsfw.push(from)
-fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
-reply('❬ ✅ ❭ La funcion NSFW esta habilitado en este grupo')
-} else if (Number(args[0]) === 0) {
-nsfw.splice(from, 1)
-fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
-reply('❬ ✅ ❭ La funcion NSFW esta deshabilitado en este grupo')
-} else {
-reply('Digite 1 para activarlo, 0 para desactivarlo')
-}
-break	
-case 'rw tireyiw iwr iwri ':
-gatauda = body.slice(7)
-reply(mess.wait)
-		 if (!isUser) return reply(mess.only.registroB)
-anu = await fetchJson(`https://arugaz.my.id/api/nekonime`, {method: 'get'})
-buffer = await getBuffer(anu.result)
-client.sendMessage(from, buffer, image,{quoted: mek})
-break
-case 'wr iwr6i2546w5464w8 4 ':
-gatauda = body.slice(13)
-reply(mess.wait)
-		 if (!isUser) return reply(mess.only.registroB)
-anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomanime?apikey=BotWeA`, {method: 'get'})
-buffer = await getBuffer(anu.result)
-client.sendMessage(from, buffer, image, {quoted: mek})
-break
-				case 'waifu':
-					gatauda = body.slice(7)
-					reply(mess.wait)
-                                        if (!isUser) return reply(mess.only.registroB)
-					anu = await fetchJson(`https://arugaz.my.id/api/nekonime`, {method: 'get'})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, image,{quoted: mek})
-					break
-				case 'randomanime':
-					gatauda = body.slice(13)
-					reply(mess.wait)
-                                        if (!isUser) return reply(mess.only.registroB)
-					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomanime?apikey=BotWeA`, {method: 'get'})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, image, {quoted: mek})
-					break						
-                             case 'delete':
+case 'jvivjb   uhbkjh':
+	try{
+		if (!isNsfw) return reply('❌ *NSFW NO ESTA ACTIVADO* ❌')
+								if (!isUser) return reply(mess.only.daftarB)
+		res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwneko?apikey=BotWeA`, {method: 'get'})
+		buffer = await getBuffer(res.result)
+		client.sendMessage(from, buffer, image, {quoted: mek, caption: 'mesum'})
+	} catch (e) {
+		console.log(`Error :`, color(e,'red'))
+		reply('❌ *ERROR* ❌')
+	}
+	break
+				  case 'lfifudpiyxhgkvbv gyvu':
+	if (!isGroup) return reply(mess.only.group)
+	if (!isGroupAdmins) return reply(mess.only.admin)
+	if (args.length < 1) return reply('Digita 1 para activar los NSFW')
+	if (Number(args[0]) === 1) {
+		if (isNsfw) return reply('Recursos Activados ✅')
+		nsfw.push(from)
+		fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
+		reply('❬ ✅ ❭ La funcion NSFW esta habilitado en este grupo')
+	} else if (Number(args[0]) === 0) {
+		nsfw.splice(from, 1)
+		fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
+		reply('❬ ✅ ❭ La funcion NSFW esta deshabilitado en este grupo')
+	} else {
+		reply('Digite 1 para activarlo, 0 para desactivarlo')
+	}
+	break	
+case 'jhguglgdififigug':
+	gatauda = body.slice(7)
+	reply(mess.wait)
+						if (!isUser) return reply(mess.only.daftarB)
+	anu = await fetchJson(`https://arugaz.my.id/api/nekonime`, {method: 'get'})
+	buffer = await getBuffer(anu.result)
+	client.sendMessage(from, buffer, image,{quoted: mek})
+	break
+case 'jhguhgigkufklgkyfy':
+	gatauda = body.slice(13)
+	reply(mess.wait)
+						if (!isUser) return reply(mess.only.daftarB)
+	anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomanime?apikey=BotWeA`, {method: 'get'})
+	buffer = await getBuffer(anu.result)
+	client.sendMessage(from, buffer, image, {quoted: mek})
+	break	                        
+	    case 'delete':
 					case 'del':
 					if (!isGroup)return reply(mess.only.group)
-                                        if (!isUser) return reply(mess.only.registroB)
+                                        if (!isUser) return reply(mess.only.daftarB)
 		                        client.deleteMessage(from, { id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
 					break
                  case 'level':
@@ -1538,161 +1515,57 @@ break
                     reply(` *Digita el comando 1 para activar, 0 para desactivar *\n * Ejemplo: ${prefix}leveling 1*`)
                 }
             break
-                                /*case 'nsfwtrap':
-                                        try{
-                                                if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-                                                if (!isUser) return reply(mess.only.registroB)
-                                                res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwtrap?apikey=APIKEYLU`, {method: 'get'})
-                                                buffer = await getBuffer(res.result)
-                                                client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Estas enfermo flaco NEFASTOOOOO'})
-                                        } catch (e) {
-                                                console.log(`*Error* :`, color(e,'red'))
-                                                reply('❌ *ERROR* ❌')
-                                        }
-										break*/
-										case 'randomhentaio': 
-						try {
-							if (!isNsfw) return reply('❌ *fds gedh w Desactivado* ❌')
-							res = await fetchJson(`https://tobz-api.herokuapp.com/api/hentai?apikey=BotWeA`, {method: 'get'})
-							buffer = await getBuffer(res.result)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Otaku que se esperaba'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
-					/*case 'nsfwloli':
-						try {
-							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Alto pedofilo socio'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break*/
-					case 'wrth wrt ': 
-						try {
-							if (!isNsfw) return reply('❌ *werth wrth  Desactivado* ❌')
-							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/biganimetiddies`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Quiero ver tetas'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
-					case 'wrth rwth w':
-						try {
-							if (!isNsfw) return reply('❌ *wrth wert h Desactivado* ❌')
-							res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwblowjob`, {method: 'get'})
-							buffer = await getBuffer(res.result)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'No antojen'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
-					case 'wryh wetywe t':
-						try {
-							if (!isNsfw) return reply('❌ *wery qetu  Desactivado* ❌')
-							res = await fetchJson(`https://api.computerfreaker.cf/v1/neko`, {method: 'get'})
-							buffer = await getBuffer(res.result)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Pero que wea?'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
-					/*case 'nsfwyuri':
-						try {
-							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://api.computerfreaker.cf/v1/yuri`, {method: 'get'})
-							buffer = await getBuffer(res.result)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'NEFASTOOOOOOO'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-					break*/
-				case 'sfksrky swyk isr':
-						try {
-							if (!isNsfw) return reply('❌ *sr tksrtk  Desactivado* ❌')
-							res = await fetchJson(`'https://meme-api.herokuapp.com/gimme/animebooty`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ese es el culo que querías?'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
-					case 'srtk etkek ':
-						try {
-							if (!isNsfw) return reply('❌ *estj wrj Desactivado* ❌')
-							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/sideoppai`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'La vieja de gabo, tremenda puta'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-					    break
-					case 'wrki rw kietyk o':
-						try {
-							if (!isNsfw) return reply('❌ *wrti rt i Desactivado* ❌')
-							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/ahegao`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Joder, quisiera follarmela'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
-					case 'opyrulyriññ yñir ':
-						try {
-							if (!isNsfw) return reply('❌ *ñiu ñ Desactivado* ❌')
-							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animethighss`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Por que muslos?'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
-					case 'uiñ utiñ utiñ tyi':
-						try {
-							if (!isNsfw) return reply('❌ *tyil ut Desactivado* ❌')
-							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animefeets`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'MMMMM PATAS'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌') 
-						}
-						break
-					case 'tuipñuiñ tyiñtui':
-						try {
-							if (!isNsfw) return reply('❌ *utiñltyiñ  Desactivado* ❌')
-							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animearmpits`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'A?'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
-						case 'utiñ7r 8tñr7ñr r':
-						try {
-							if (!isNsfw) return reply('❌ *ryu irturt Desactivado* ❌')
-							res = await fetchJson(`https://tobz-api.herokuapp.com/nsfwtrap?apikey=BotWeA`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Bro....'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
+                               
+			case 'nsfwbobs': 
+			try {
+				if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
+				res = await fetchJson(`https://meme-api.herokuapp.com/gimme/biganimetiddies`, {method: 'get'})
+				buffer = await getBuffer(res.url)
+				client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Quiero ver tetas'})
+			} catch (e) {
+				console.log(`Error :`, color(e,'red'))
+				reply('❌ *ERROR* ❌')
+			}
+			break
+		
+	
+		case 'nb x,j , kxbkbjbd':
+			try {
+				if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
+				res = await fetchJson(`https://meme-api.herokuapp.com/gimme/sideoppai`, {method: 'get'})
+				buffer = await getBuffer(res.url)
+				client.sendMessage(from, buffer, image, {quoted: mek, caption: 'La vieja de gabo, tremenda puta'})
+			} catch (e) {
+				console.log(`Error :`, color(e,'red'))
+				reply('❌ *ERROR* ❌')
+			}
+			break
+		
+		case 'k.bdjcn k csdnlvknfñ':
+			try {
+				if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
+				res = await fetchJson(`https://meme-api.herokuapp.com/gimme/ahegao`, {method: 'get'})
+				buffer = await getBuffer(res.url)
+				client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Joder, quisiera follarmela'})
+			} catch (e) {
+				console.log(`Error :`, color(e,'red'))
+				reply('❌ *ERROR* ❌')
+			}
+			break
+		
+		case 'kndñovnskñjbñbjbl ih':
+			try {
+				if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
+				res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animefeets`, {method: 'get'})
+				buffer = await getBuffer(res.url)
+				client.sendMessage(from, buffer, image, {quoted: mek, caption: 'MMMMM PATAS'})
+			} catch (e) {
+				console.log(`Error :`, color(e,'red'))
+				reply('❌ *ERROR* ❌') 
+			}
+			break
+
+
                                 case 'ping':    
 			   	        if (!isUser) return reply(mess.only.userB)
                                         const timestamp = speed();
