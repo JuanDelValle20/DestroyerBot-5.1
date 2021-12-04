@@ -1183,22 +1183,7 @@ contextInfo: { mentionedJid: [sender] }
 client.groupSettingChange (from, GroupSettingChange.messageSend, false)
 client.sendMessage(from, open, text, {quoted: mek})
 break
-				                
-case 'unir':
-if (!isGroup) return reply(mess.only.group)
-if (!isGroupAdmins) return reply(mess.only.admin)
-if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-if (args.length < 1) return reply('Para emoción ✋\nPara unir a una persona debes escribir el número sin (+)\n\nEjemplo: *unir *Código de país*xxxxxxxxx')
-if (args[0].startsWith('+')) return reply(mess.error.unire)
-try {0
-num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
-client.groupAdd(from, [num])
-} catch (e) {
-console.log('Error:', e)
-reply('No se pudo agregar el destino, tal vez porque es privado')
-}
-break
-				
+				                		
 case 'fgc': 
 reply(mess.foto)
 if (!isGroup) return reply(mess.only.group)
@@ -1377,7 +1362,7 @@ break
 		if (!isUser) return reply(mess.only.registroB)
                 reply(mess.only.musica)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=10hamilton`)
+                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=10JuanDelValle20`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌜Cancion Encontrada ✅⌟*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*\n\n_*Servicio proveido por Juan del Valle*_`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1391,7 +1376,7 @@ break
 		if (!isUser) return reply(mess.only.registroB)
 	        reply(mess.only.musica2)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=10shanduy`)
+                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=10JuanDelValle20`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌜Cancion Encontrada ✅⌟*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*\n\n_*Servicio proveido por Juan del Valle*_`
                 buffer = await getBuffer(anu.result.thumbnail)
