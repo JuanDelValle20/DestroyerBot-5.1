@@ -3,9 +3,7 @@
 * ShanBot no tiene ningun fin de lucro
 * shanduy se reserva todos los derechos de autor
 * © 2021 shanduy, INC.
-
-Cualquier copia que utilice mi ApiKey sera dado de baja
-
+Cualquier copia que utilize mi ApiKey sera dado de baja
 - Que hay de nuevo?
 * Nada
 */
@@ -110,76 +108,76 @@ const antidiscord = JSON.parse(fs.readFileSync('./src/antidiscord.json'))
 
 //LEVEL INICIO
 const getLevelingXp = (userId) => {
-            let position = false
-            Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
-                    position = i
-                }
-            })
-            if (position !== false) {
-                return _level[position].xp
-            }
-        }
+	let position = false
+	Object.keys(_level).forEach((i) => {
+		if (_level[i].jid === userId) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		return _level[position].xp
+	}
+}
 
-        const getLevelingLevel = (userId) => {
-            let position = false
-            Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
-                    position = i
-                }
-            })
-            if (position !== false) {
-                return _level[position].level
-            }
-        }
+const getLevelingLevel = (userId) => {
+	let position = false
+	Object.keys(_level).forEach((i) => {
+		if (_level[i].jid === userId) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		return _level[position].level
+	}
+}
 
-        const getLevelingId = (userId) => {
-            let position = false
-            Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
-                    position = i
-                }
-            })
-            if (position !== false) {
-                return _level[position].jid
-            }
-        }
+const getLevelingId = (userId) => {
+	let position = false
+	Object.keys(_level).forEach((i) => {
+		if (_level[i].jid === userId) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		return _level[position].jid
+	}
+}
 
-        const addLevelingXp = (userId, amount) => {
-            let position = false
-            Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
-                    position = i
-                }
-            })
-            if (position !== false) {
-                _level[position].xp += amount
-                fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
-            }
-        }
+const addLevelingXp = (userId, amount) => {
+	let position = false
+	Object.keys(_level).forEach((i) => {
+		if (_level[i].jid === userId) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		_level[position].xp += amount
+		fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
+	}
+}
 
-        const addLevelingLevel = (userId, amount) => {
-            let position = false
-            Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
-                    position = i
-                }
-            })
-            if (position !== false) {
-                _level[position].level += amount
-                fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
-            }
-        }
+const addLevelingLevel = (userId, amount) => {
+	let position = false
+	Object.keys(_level).forEach((i) => {
+		if (_level[i].jid === userId) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		_level[position].level += amount
+		fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
+	}
+}
 
-        const addLevelingId = (userId) => {
-            const obj = {jid: userId, xp: 1, level: 1}
-            _level.push(obj)
-            fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
-        }
+const addLevelingId = (userId) => {
+	const obj = {jid: userId, xp: 1, level: 1}
+	_level.push(obj)
+	fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
+}
 //LEVEL FIN
 	
 function addMetadata(packname, author) {	
-	if (!packname) packname = 'DestroyerBot'; if (!author) author = 'Juan del Valle';	
+	if (!packname) packname = 'DestroyerBot'; if (!author) author = 'Juan Del Valle';	
 	author = author.replace(/[^a-zA-Z0-9]/g, '');	
 	let name = `${author}_${packname}`
 	if (fs.existsSync(`./${name}.exif`)) return `./${name}.exif`
@@ -217,7 +215,7 @@ function addMetadata(packname, author) {
 		return `./${name}.exif`	
 	})	
 
-} 
+}  
 	
 function kyun(seconds){
   function pad(s){
@@ -618,56 +616,57 @@ function addMetadata(packname, author) {
 	})	
 
 }
-			switch(command) {
-		case 'help':
-		case 'menu':
-	        client.sendMessage(from, help(prefix, sender), text, {quoted: mek})
-		break
-                case 'otak':
-		client.sendMessage(from, otak(prefix, sender), text, {quoted: mek})
-		break
-		case 'juegos':
-		client.sendMessage(from, juegos(prefix, sender), text, {quoted: mek})
-		break
-		case 'idioma':
-		client.sendMessage(from, bahasa(prefix, sender), text, {quoted: mek})
-		break
-		case 'levelmenu':
-		client.sendMessage(from, levelmenu(prefix, sender), text, {quoted: mek})
-		break
-		case 'shanmenu':
-		client.sendMessage(from, toinmenu(prefix, sender), text, {quoted: mek})
-		break
-		case 'menuadmin':
-		client.sendMessage(from, menuadmin(prefix, sender), text, {quoted: mek})
-		break
-		case 'banmenu':
-		client.sendMessage(from, banmenu(prefix, sender), text, {quoted: mek})
-		break
-		case 'kickmenu':
-		client.sendMessage(from, kickmenu(prefix, sender), text, {quoted: mek})
-		break
-		case 'desmenu':
-		client.sendMessage(from, desmenu(prefix, sender), text, {quoted: mek})
-		break
-		case 'versión':
-		case 'version':
-		client.sendMessage(from, version(prefix, sender), text, {quoted: mek})
-		break
-		case 'antimenu':
-		client.sendMessage(from, antimenu(prefix, sender), text, {quoted: mek})
-		break
-                case 'welmenu':
-		client.sendMessage(from, welmenu(prefix, sender), text, {quoted: mek})
-		break
-		case 'shantera':
-		client.sendMessage(from, shantera(prefix, sender), text, {quoted: mek})
-		break
-					
-		/*case 'virtex':
-	       case 'troleo':
-               client.sendMessage(from, virtex(prefix, sender), text, {quoted: mek})
-               break*/
+
+switch(command) {
+	case 'help':
+	case 'menu':
+		client.sendMessage(from, help(prefix, sender), text, {quoted: mek})
+	break
+			case 'otak':
+	client.sendMessage(from, otak(prefix, sender), text, {quoted: mek})
+	break
+	case 'juegos':
+	client.sendMessage(from, juegos(prefix, sender), text, {quoted: mek})
+	break
+	case 'idioma':
+	client.sendMessage(from, bahasa(prefix, sender), text, {quoted: mek})
+	break
+	case 'levelmenu':
+	client.sendMessage(from, levelmenu(prefix, sender), text, {quoted: mek})
+	break
+	case 'shanmenu':
+	client.sendMessage(from, toinmenu(prefix, sender), text, {quoted: mek})
+	break
+	case 'menuadmin':
+	client.sendMessage(from, menuadmin(prefix, sender), text, {quoted: mek})
+	break
+	case 'nsfwmenu':
+	client.sendMessage(from, nsfwmenu(prefix, sender), text, {quoted: mek})
+	break
+	case 'banmenu':
+	client.sendMessage(from, banmenu(prefix, sender), text, {quoted: mek})
+	break
+	case 'desmenu':
+	client.sendMessage(from, desmenu(prefix, sender), text, {quoted: mek})
+	break
+	case 'versión':
+	case 'version':
+	client.sendMessage(from, version(prefix, sender), text, {quoted: mek})
+	break
+	case 'antimenu':
+	client.sendMessage(from, antimenu(prefix, sender), text, {quoted: mek})
+	break
+			case 'welmenu':
+	client.sendMessage(from, welmenu(prefix, sender), text, {quoted: mek})
+	break
+	case 'shantera':
+	client.sendMessage(from, shantera(prefix, sender), text, {quoted: mek})
+	break
+				
+	/*case 'virtex':
+	   case 'troleo':
+		   client.sendMessage(from, virtex(prefix, sender), text, {quoted: mek})
+		   break*/
                             
 
 
@@ -1088,7 +1087,7 @@ break
 						if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 						if (!isGroupAdmins) return reply(mess.only.admin)
 						if (!isGroup) return reply(mess.only.group)
-						if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) return reply('Etiqueta al usuario que vamos a *"DESTRUIR"*')
+						if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) return reply('Marca al que vamos a funar')
 						if (mek.message.extendedTextMessage.contextInfo.participant === undefined) {
 						entah = mek.message.extendedTextMessage.contextInfo.mentionedJid
 						if (entah.length > 1) {
@@ -1104,7 +1103,7 @@ break
 						entah = ridwan.message.extendedTextMessage.contextInfo.participant
 						client.groupRemove(from, [entah])
 						}
-	break
+						break
 
 case 'demote':
 if (!isGroup) return reply(mess.only.group)
@@ -1242,7 +1241,7 @@ break
 				case 'sticker':
 				case 'stickergif':
 				case 'stikergif':
-					if (!isUser) return reply(mess.only.daftarB)
+					if (!isUser) return reply(mess.only.registroB)
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 			 const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 			 const media = await client.downloadAndSaveMediaMessage(encmedia)
@@ -1362,7 +1361,7 @@ break
 		if (!isUser) return reply(mess.only.registroB)
                 reply(mess.only.musica)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=10JuanDelValle20`)
+                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=23hamilton`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌜Cancion Encontrada ✅⌟*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*\n\n_*Servicio proveido por Juan del Valle*_`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1376,7 +1375,7 @@ break
 		if (!isUser) return reply(mess.only.registroB)
 	        reply(mess.only.musica2)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=10JuanDelValle20`)
+                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=23shanduy`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌜Cancion Encontrada ✅⌟*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*\n\n_*Servicio proveido por Juan del Valle*_`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1420,7 +1419,7 @@ break
 case 'jvivjb   uhbkjh':
 	try{
 		if (!isNsfw) return reply('❌ *NSFW NO ESTA ACTIVADO* ❌')
-								if (!isUser) return reply(mess.only.daftarB)
+								if (!isUser) return reply(mess.only.registroB)
 		res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwneko?apikey=BotWeA`, {method: 'get'})
 		buffer = await getBuffer(res.result)
 		client.sendMessage(from, buffer, image, {quoted: mek, caption: 'mesum'})
@@ -1449,7 +1448,7 @@ case 'jvivjb   uhbkjh':
 case 'jhguglgdififigug':
 	gatauda = body.slice(7)
 	reply(mess.wait)
-						if (!isUser) return reply(mess.only.daftarB)
+						if (!isUser) return reply(mess.only.registroB)
 	anu = await fetchJson(`https://arugaz.my.id/api/nekonime`, {method: 'get'})
 	buffer = await getBuffer(anu.result)
 	client.sendMessage(from, buffer, image,{quoted: mek})
@@ -1457,7 +1456,7 @@ case 'jhguglgdififigug':
 case 'jhguhgigkufklgkyfy':
 	gatauda = body.slice(13)
 	reply(mess.wait)
-						if (!isUser) return reply(mess.only.daftarB)
+						if (!isUser) return reply(mess.only.registroB)
 	anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomanime?apikey=BotWeA`, {method: 'get'})
 	buffer = await getBuffer(anu.result)
 	client.sendMessage(from, buffer, image, {quoted: mek})
@@ -1465,7 +1464,7 @@ case 'jhguhgigkufklgkyfy':
 	    case 'delete':
 					case 'del':
 					if (!isGroup)return reply(mess.only.group)
-                                        if (!isUser) return reply(mess.only.daftarB)
+                                        if (!isUser) return reply(mess.only.registroB)
 		                        client.deleteMessage(from, { id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
 					break
                  case 'level':
